@@ -99,3 +99,6 @@ You'll open a screen w/ different categories: the LSP, DAP (Debuggers), Linters 
 * shfmt -> Bash
 * prettier (via prettier package) -> Docker
 * gersemi (or cmakelang) -> CMake
+
+## Part 3
+Install the tmux, paste the configurations from the [repo](https://github.com/Rildian/dotfiles) on ```~/.config``` and you're settled.
