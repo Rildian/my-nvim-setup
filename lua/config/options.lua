@@ -106,3 +106,13 @@ vim.opt.splitright = true -- Vertical splits open to the right
 
 -- Telescope
 vim.g.lazyvim_picker = "telescope"
+
+-- Treat env as a plain text, no LSP, no BS
+vim.filetype.add({
+  filename = {
+    ['.env'] = 'text',
+  },
+  pattern = {
+    ['%.env%.[%w_.-]+'] = 'text',
+  },
+})
