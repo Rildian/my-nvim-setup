@@ -39,4 +39,19 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     })
   end,
 })
--- ========== PART 1 ========== --
+
+-- Helper function to make setting indents clean and easy
+local function set_indent(filetypes, spaces)
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = filetypes,
+    callback = function()
+      vim.opt_local.shiftwidth = spaces
+      vim.opt_local.tabstop = spaces
+      vim.opt_local.expandtab = true -- Set to false if you prefer actual Tab characters
+    end,
+  })
+end
+
+-- Define your indentation rules here:
+set_indent({ "python", "java" }, 4) -- 4 spaces for C, C++, and Java
+set_indent({ "sh", "lua", "json", "c", "cpp" }, 2) -- 2 spaces for Bash, Lua, and JSON

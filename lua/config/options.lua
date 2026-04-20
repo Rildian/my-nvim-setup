@@ -1,5 +1,7 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 -- ================================================================================================
 -- TITLE : NeoVim options
@@ -34,6 +36,7 @@ vim.opt.incsearch = true -- Show matches as you type
 -- Visual Settings
 vim.opt.termguicolors = true -- Enable 24-bit colors
 vim.opt.signcolumn = "yes" -- Always show sign column
+vim.opt.colorcolumn = "120" -- Show column at 100 characters
 vim.opt.showmatch = true -- Highlight matching brackets
 vim.opt.matchtime = 2 -- How long to show matching bracket
 vim.opt.completeopt = "menuone,noinsert,noselect" -- Completion options
@@ -107,12 +110,12 @@ vim.opt.splitright = true -- Vertical splits open to the right
 -- Telescope
 vim.g.lazyvim_picker = "telescope"
 
--- Treat env as a plain text, no LSP, no BS
+-- Treat env as a plain text
 vim.filetype.add({
   filename = {
-    ['.env'] = 'text',
+    [".env"] = "text",
   },
   pattern = {
-    ['%.env%.[%w_.-]+'] = 'text',
+    ["%.env%.[%w_.-]+"] = "text",
   },
 })
